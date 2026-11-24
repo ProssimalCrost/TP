@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Desejo em Equilíbrio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3F9; --surface:#FFFFFF; --ink:#2A1A38; --muted:#6B5A78; --line:#DDD0E6;
+  --plum:#4A2C5E; --orchid:#B2658F; --gold:#E0A83A; --on-gold:#2A1A38; --on-plum:#F7F3F9;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1125; --surface:#26193450; --ink:#F2EAF6; --muted:#B9A8C6; --line:#43305A;
+    --plum:#2F1D40; --orchid:#D58BB3; --on-plum:#F2EAF6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1125; --surface:#26193450; --ink:#F2EAF6; --muted:#B9A8C6; --line:#43305A;
+  --plum:#2F1D40; --orchid:#D58BB3; --on-plum:#F2EAF6; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:5rem 0 4rem}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem)}
+.hero p.lead{margin-top:1.5rem;max-width:34rem;font-size:1.2rem;color:var(--muted)}
+.btn{display:inline-block;margin-top:2rem;background:var(--gold);color:var(--on-gold);font-weight:600;
+  text-decoration:none;padding:1rem 1.75rem;border-radius:.5rem;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.balance{position:relative;aspect-ratio:1;max-width:340px;width:100%;justify-self:center}
+.balance i{position:absolute;top:18%;width:64%;aspect-ratio:1;border-radius:50%}
+.balance i:first-child{left:0;background:var(--plum);opacity:.92}
+.balance i:last-child{right:0;background:var(--orchid);mix-blend-mode:multiply;opacity:.9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .balance i:last-child{mix-blend-mode:screen;opacity:.7}}
+.balance b{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);width:2px;height:14%;background:var(--ink);opacity:.35}
+
+/* intro band */
+.band{background:var(--plum);color:var(--on-plum);padding:3.5rem 0}
+.band p{max-width:44rem;font:400 clamp(1.35rem,3vw,1.85rem)/1.4 var(--serif)}
+
+/* topics */
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);max-width:30rem}
+.topics{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem}
+.topics li{padding:1.4rem 0;border-top:1px solid var(--line)}
+.topics h3{font-size:1.3rem;margin-bottom:.35rem}
+.topics p{color:var(--muted);font-size:1rem}
+.topics li:last-child{grid-column:1/-1}
+
+/* offer */
+.offer{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:3rem;
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.offer h2{font-size:clamp(1.7rem,3.5vw,2.2rem)}
+.offer p{color:var(--muted);margin-top:.75rem;max-width:30rem}
+.price{text-align:center}
+.price small{display:block;color:var(--muted);font-size:.9rem}
+.price strong{display:block;font:600 3.2rem/1.1 var(--serif);margin:.25rem 0}
+.price .btn{margin-top:1rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:1rem;max-width:44rem}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding:3rem 0 2.5rem;gap:2rem}
+  .balance{max-width:220px;order:-1;justify-self:start}
+  .topics{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr;padding:2rem 1.5rem}
+  .price{text-align:left}
+  .btn{display:block;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Desejo em Equilíbrio</h1>
+      <p class="lead">Entenda melhor sua sexualidade e cuide da sua intimidade em todas as fases da vida.</p>
+      <a class="btn" href="#oferta">Quero conhecer o Desejo em Equilíbrio</a>
+    </div>
+    <div class="balance" aria-hidden="true"><i></i><i></i><b></b></div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <p>O passar dos anos traz mudanças físicas, emocionais e hormonais. Conhecer essas transformações é importante para compreender a libido e cuidar da saúde sexual.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Um programa educativo para homens e mulheres</h2>
+      <ul class="topics">
+        <li><h3>Libido masculina e feminina</h3><p>Como o desejo funciona em cada corpo e por que ele varia ao longo da vida.</p></li>
+        <li><h3>Mudanças hormonais na maturidade</h3><p>O que muda com o tempo e como compreender essas transformações.</p></li>
+        <li><h3>Hábitos relacionados à saúde sexual</h3><p>Rotinas do dia a dia que influenciam a sua intimidade.</p></li>
+        <li><h3>Bem-estar físico e emocional</h3><p>A relação entre corpo, mente e vida sexual.</p></li>
+        <li><h3>Comunicação e intimidade no relacionamento</h3><p>Como conversar sobre desejo e fortalecer a conexão com o parceiro ou a parceira.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="oferta" style="padding-top:0">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <h2>O que você encontra no programa</h2>
+          <p>Um ebook com acesso digital, conforme as condições apresentadas no momento da compra.</p>
+        </div>
+        <div class="price">
+          <small>Investimento</small>
+          <strong>R$ 97,00</strong>
+          <a class="btn" href="#oferta" id="checkout">Quero conhecer o Desejo em Equilíbrio</a>
+        </div>
+      </div>
+      <p class="note">Este conteúdo tem caráter educativo e não substitui consulta, diagnóstico ou tratamento médico. Em caso de dúvidas sobre sua saúde, procure um profissional.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><p class="note" style="margin:0">© Desejo em Equilíbrio</p></div></footer>
+</body>
+</html>
